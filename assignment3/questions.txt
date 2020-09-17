@@ -1,0 +1,25 @@
+1. 
+The difference between absolute and fixed positions is in the frame of refrence.
+
+Elements which have an absolute position will keep their position relative to the page - not to the viewport (browser window).
+This means that they will scroll with the page, and do not have any regard for wether or not the window itself has ben resized.
+
+Elements which have a fixed position keep their position relative to the browser window. They can clash with other elements which are absolue, 
+as they do not regard the same frame of refrence. If you resize the window, or scroll. A fixed element will follow, and keep up with the window itself.
+
+2.
+To select the third element within another element - we use the nth-child-selector. 
+This selector can be used to choose any child of an element (for example, the third), or a range of children.
+
+In practice:
+
+<div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</div>
+
+<style>
+    div>p:nth.child(3){ /* Set whatever variables and attributes you want here */ }
+</style>
