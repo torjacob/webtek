@@ -43,7 +43,10 @@ p {
     line-height: 1.5;
 }
 
-@media screen and (min-width: 940px) {
+/* Tolket oppgave som device-width, og ikke pur width.
+ * Om det skulle være selve browser-størrelsen som er ønsket variabel, 
+ * endre 'min-device-width' til 'min-width' */
+@media screen and (min-device-width: 940px) {
     video {
         display: block;
         }
