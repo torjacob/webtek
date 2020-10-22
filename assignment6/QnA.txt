@@ -1,0 +1,27 @@
+1. Why does 0.1 + 0.2 === 0.3 evaluate to false in js?
+  This is because 0.1 + 0.2 !== 0.3 in js. As a result of "floating point math",
+  this math is based on binary - and as such, rational numbers (0.1 f.ex.)
+  whose denominator is not a power of two cannot be represented accurately.
+  tl;dr / ie:
+  0.1 + 0.2 = 0.3000.....04 , != 0.300
+
+2. What does the method attribute on a form element decide?
+  Wether it will be a POST or GET form.
+
+3. Explain why the form fields appear in the URL when the method on form element
+  is changed to get?
+  This is because the data is sent as URL-variables, and not HTTP transactions
+  (POST).
+
+4. Why is it considered bad practice to only validate form input with HTML5
+  and/or javascript?
+  This is because the data could be manipulated by a malicious user. Server side
+  validation is always preferred to include for security's sake - so that the
+  submitted data can be confirmed as safe.
+
+5. When is it appropriate to use textarea over input?
+  Usually, it is preferred for longer text entries.
+  Input has a (usually high) character limit, and the visibilty of the entered
+  text is limited for the user - as there is only one line.
+  Text areas can be customized so that the user is able to see any amount of
+  lines and text wished for by the designer.

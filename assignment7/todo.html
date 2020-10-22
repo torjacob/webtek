@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./todo.css">
+  <title>Todo</title>
+</head>
+<body>
+  <label for="taskIn" id="inLabel">Todo: </label>
+  <input id="taskIn" type="text" placeholder="Write here to add todos" autofocus>
+  <button id="add" onclick="addTask()">Add</button>
+
+  <div id="listContainer">
+    <ul id="taskList"></ul>
+  </div>
+
+  <output id="counter">0/0</output>
+
+  <script src="./todo.js"></script>
+</body>
+</html>

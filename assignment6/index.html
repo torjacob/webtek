@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tax form</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <form action="http://folk.ntnu.no/michaedm/norwegian-tax-administration/receive.php" method="post">
+            <!groupings of labels and form elements put into div's to streamline styling>
+            <div>
+                <label for="name">Real Name:</label><br>
+                <input type="text" id="name" name="name" pattern="[a-zA-Z ]+" placeholder="Full given birthname" required><br>
+            </div>
+
+            <div>
+                <label for="gender">Gender:</label><br>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+            </div>
+
+            <div>
+                <label for="email">E-mail:</label><br>
+                <input id="email" name="email" type="email" placeholder="Contact e-mail" required><br>
+            </div>
+
+            <div>
+                <label for="birthdate">Birthdate:</label><br>
+                <input id="birthdate" name="birthdate" type="date" max="1987-12-31" required><br>
+            </div>
+
+            <div>
+                <label for="hero">Hero Name:</label><br>
+                <input id="hero" type="text" name="hero" pattern="[a-zA-Z0-9 ]+" placeholder="Taken vigilante alias" required><br>
+            </div>
+
+            <div>
+                <label for="spandex">Do You Wear Spandex?:</label><br>
+                <input id="true" name="spandex" type="radio" value="True" required>
+                <label for="true">Yes</label><br>
+                <input id="false" name="spandex" type="radio" value="False">
+                <label for="false">No</label><br>
+            </div>
+
+            <div>
+                <label for="strength">Strength:</label><br>
+                <select id="strength" name="strength" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select><br>
+            </div>
+
+            <div>
+                <label for="speed">Speed:</label><br>
+                <select id="speed" name="speed" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select><br>
+            </div>
+
+            <div>
+                <label for="intelligence">Intelligence:</label><br>
+                <select id="intelligence" name="intelligence" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select><br>
+            </div>
+
+            <div>
+                <label for="income">Income:</label><br>
+                <input id="income" name="income" type="number" min=0 placeholder="Income over the last fiscal year"
+                       oninput="calcTax()" required>
+            </div>
+
+            <div>
+                <label for="wealth">Wealth:</label><br>
+                <input id="wealth" name="wealth" type="number" min=0 placeholder="Personal wealth"
+                       oninput="calcTax()" required>
+            </div>
+
+            <div>
+                <label for="tax">Tax:</label><br>
+                <input id="tax" name="tax" type="number" placeholder="Calculated tax will appear here" disabled>
+            </div>
+
+            <input type="submit" value="Submit Tax Form" id="submit">
+        </form>
+
+        <script src="scripts/script.js"></script>
+    </body>
+</html>

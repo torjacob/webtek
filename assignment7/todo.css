@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+* {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+body {
+  width: 60%;
+  margin: auto;
+  padding: 2em;
+}
+
+input {
+  margin: .6em;
+}
+
+input:checked + label {
+  text-decoration: line-through;
+}
+
+output {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  padding: 1em;
+  font-weight: bold;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+#inLabel {
+  font-weight: bolder;
+}
+
+#taskIn {
+  width: 100%;
+  margin: 1em 0;
+  padding: .8em;
+}
