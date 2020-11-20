@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Tax forms: Bar chart with lines</title>
+		<meta charset="UTF-8" />
+		<script src="taxForms.js"></script>
+	</head>
+	<body>
+		<canvas id="chart" width="700" height="550"></canvas>
+
+		<script>
+			const canvas = document.getElementById('chart');
+			const context = canvas.getContext('2d');
+
+			/* Draw a line from (fromX, fromY) to (toX, toY) */
+			function drawLine(fromX, fromY, toX, toY) {
+				context.beginPath();
+				context.moveTo(toX, toY);
+				context.lineTo(fromX, fromY);
+				context.stroke();
+			}
+
+			/* Draw a text (string) on (x, y) */
+			function drawText(text, x, y) {
+				context.fillStyle = 'black';
+				context.fillText(text, x, y);
+			}
+
+			/* Draw a text and with a line to its right */
+			function drawLineWithText(text, fromX, fromY, toX, toY) {
+				drawText(text, fromX - 50, fromY + 10); // seems like it would be more alligned with fromY + 5 instead
+				drawLine(fromX, fromY, toX, toY);
+			}
+
+			/* Insert your code here. */
+			let maxval = 1000000; // Highest value of chart
+			let incr = 10; // Number of lines
+			let linelength = canvas.width - 100; // Length of line
+			let linestart = 100; // Start of line
+
+			/* Draw Lines */
+			for (let i = 0; i < 10; i++) {
+				let income = maxval;
+				let fromY = 0;
+
+				if (i === 0) {
+					toY = fromY;
+					drawLineWithText(income, linestart, fromY, linelength, toY);
+				}
+
+				income = income - i * (maxval / incr);
+				fromY = fromY + i * (canvas.height / incr);
+				toY = fromY;
+				drawLineWithText(income, linestart, fromY, linelength, toY);
+			}
+
+			/* Funct to create rectangles */
+			function rectangle(x, y, width, height, color) {
+				context.fillStyle = color;
+				context.fillRect(x, y, width, height);
+			}
+
+			/* colours */
+			const red = '#db001a';
+			const blue = '#45c2de';
+
+			/* Write text for income and wealth */
+			drawText('Income', linelength + 10, 25);
+			drawText('Wealth', linelength + 10, 50);
+
+			/* Draw rectangles */
+			rectangle(linelength + 50, 10, 30, 20, blue);
+			rectangle(linelength + 50, 35, 30, 20, red);
+		</script>
+	</body>
+</html>
